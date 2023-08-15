@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
-
-import css from './App.module.css';
 import Searchbar from './Searchbar/Searchbar';
+import ImageGallery from './ImageGallery/ImageGallery';
+import { Component } from 'react';
 
-class App extends Component {
+export class App extends Component {
+  state = {
+    searchName: '',
+  };
+
+  setSearchNameInState = searchName => {
+    this.setState({ searchName });
+  };
   render() {
     return (
-      <div className={css.app}>
-        <Searchbar />
-      </div>
+      <>
+        <Searchbar onSubmit={this.setSearchNameInState} />
+        <ImageGallery searchName={this.state.searchName} />
+      </>
     );
   }
 }
-
-export default App;
-

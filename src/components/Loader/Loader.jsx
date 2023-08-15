@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import { Audio } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner';
 
-class Loader extends Component {
-  render() {
-    return (
-      <Audio
-        height="80"
-        width="80"
-        radius="9"
-        color="green"
-        ariaLabel="three-dots-loading"
-        wrapperStyle
-        wrapperClass
-      />
-    );
-  }
-}
-
-export default Loader;
+export const Loader = () => {
+  return (
+    <ColorRing
+      visible={true}
+      height="100"
+      width="100"
+      ariaLabel="blocks-loading"
+      wrapperStyle={{}}
+      wrapperClass="blocks-wrapper"
+      colors={['#20cfe0', '#2190e3', '#1d9de5', '#173bc0', '#173bc0']}
+    />
+  );
+};
